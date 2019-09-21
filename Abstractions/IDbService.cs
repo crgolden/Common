@@ -1,13 +1,25 @@
 ﻿namespace Common
 {
-    using System.Data;
+    using System.Data.Common;
 
     public interface IDbService
     {
         string Provider { get; }
 
-        IDbConnection GetConnection();
+        bool CanCreateDataSourceEnumerator { get; }
 
-        IDbDataAdapter GetDataAdapter(string commandText);
+        DbCommand CreateCommand();
+
+        DbCommandBuilder CreateCommandBuilder();
+
+        DbConnection CreateConnection();
+
+        DbConnectionStringBuilder CreateConnectionStringBuilder();
+
+        DbDataAdapter CreateDataAdapter();
+
+        DbParameter CreateParameter();
+
+        DbDataSourceEnumerator CreateDataSourceEnumerator();
     }
 }
