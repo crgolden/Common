@@ -1,6 +1,6 @@
 ﻿namespace Common
 {
-    public enum EventIds
+    public enum EventId
     {
         HostedServiceStarted,
         HostedServiceStopped,

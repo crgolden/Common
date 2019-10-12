@@ -22,7 +22,7 @@
             string folderName,
             CancellationToken cancellationToken = default);
 
-        string GetUrl(
+        Uri GetUrl(
             string fileName,
             string folderName,
             DateTime expiration);

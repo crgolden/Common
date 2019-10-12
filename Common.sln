@@ -10,6 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 		.ruleset = .ruleset
 		Common.snk = Common.snk
+		deeprog.ico = deeprog.ico
 		NuGet.Config = NuGet.Config
 		README.md = README.md
 		stylecop.json = stylecop.json
@@ -17,7 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Claims", "Claims\Common.Claims.csproj", "{59BB0959-7A2A-4961-B930-EEA7964ADBCE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Enums", "Enums\Common.Enums.csproj", "{63510D28-325A-4F93-8422-4817E6B81073}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Enums", "Enums\Common.Enums.csproj", "{63510D28-325A-4F93-8422-4817E6B81073}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
