@@ -6,11 +6,11 @@
         This is a convenience class to strongly type the OIDC Address Claim,
         which is shared between the OIDC auth server and client APIs.
       </summary>
-      <remarks>
-        https://openid.net/specs/openid-connect-core-1_0.html#AddressClaim
-      </remarks>
     </Address>
     <Formatted>
+      <summary>
+        Gets the full mailing address.
+      </summary>
       <value>
         Full mailing address, formatted for display or use on a mailing label.
         This field MAY contain multiple lines, separated by newlines.
@@ -19,6 +19,9 @@
       </value>
     </Formatted>
     <StreetAddress>
+      <summary>
+        Gets the full street address.
+      </summary>
       <value>
         Full street address component, which MAY include house number, street name,
         Post Office Box, and multi-line extended street address information.
@@ -28,21 +31,33 @@
       </value>
     </StreetAddress>
     <Locality>
+      <summary>
+        Gets the city or locality.
+      </summary>
       <value>
         City or locality component.
       </value>
     </Locality>
     <Region>
+      <summary>
+        Gets the state or region.
+      </summary>
       <value>
         State, province, prefecture, or region component.
       </value>
     </Region>
     <PostalCode>
+      <summary>
+        Gets the zip or postal code.
+      </summary>
       <value>
         Zip code or postal code component.
       </value>
     </PostalCode>
     <Country>
+      <summary>
+        Gets the country.
+      </summary>
       <value>
         Country name component.
       </value>

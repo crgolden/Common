@@ -11,7 +11,7 @@
             IEnumerable<string> destinations,
             string subject,
             string htmlBody,
-            string textBody = default,
+            string? textBody = default,
             CancellationToken cancellationToken = default);
     }
 }

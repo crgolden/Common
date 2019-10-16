@@ -1,34 +1,34 @@
 ﻿namespace Common
 {
-    using System.Diagnostics.CodeAnalysis;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
+
+    // https://openid.net/specs/openid-connect-core-1_0.html#AddressClaim
 
     /// <include file='docs.xml' path='docs/members[@name="address"]/Address/*'/>
-    [ExcludeFromCodeCoverage]
     public class Address
     {
         /// <include file='docs.xml' path='docs/members[@name="address"]/Formatted/*'/>
-        [JsonProperty("formatted")]
-        public string Formatted => $"{StreetAddress}\r\n{Locality}\r\n{Region} {PostalCode}\r\n{Country}";
+        [JsonPropertyName("formatted")]
+        public string? Formatted => $"{StreetAddress}\r\n{Locality}\r\n{Region} {PostalCode}\r\n{Country}";
 
         /// <include file='docs.xml' path='docs/members[@name="address"]/StreetAddress/*'/>
-        [JsonProperty("street_address")]
-        public string StreetAddress { get; set; }
+        [JsonPropertyName("street_address")]
+        public string? StreetAddress { get; set; }
 
         /// <include file='docs.xml' path='docs/members[@name="address"]/Locality/*'/>
-        [JsonProperty("locality")]
-        public string Locality { get; set; }
+        [JsonPropertyName("locality")]
+        public string? Locality { get; set; }
 
         /// <include file='docs.xml' path='docs/members[@name="address"]/Region/*'/>
-        [JsonProperty("region")]
-        public string Region { get; set; }
+        [JsonPropertyName("region")]
+        public string? Region { get; set; }
 
         /// <include file='docs.xml' path='docs/members[@name="address"]/PostalCode/*'/>
-        [JsonProperty("postal_code")]
-        public string PostalCode { get; set; }
+        [JsonPropertyName("postal_code")]
+        public string? PostalCode { get; set; }
 
         /// <include file='docs.xml' path='docs/members[@name="address"]/Country/*'/>
-        [JsonProperty("country")]
-        public string Country { get; set; }
+        [JsonPropertyName("country")]
+        public string? Country { get; set; }
     }
 }

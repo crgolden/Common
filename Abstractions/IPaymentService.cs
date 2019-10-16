@@ -18,14 +18,14 @@
             string customerId,
             decimal amount,
             string currency,
-            string description = default,
+            string? description = default,
             CancellationToken cancellationToken = default);
 
         Task<string> CaptureAsync(
             string customerId,
             decimal amount,
             string currency,
-            string description = default,
+            string? description = default,
             CancellationToken cancellationToken = default);
 
         Task UpdateAsync(
