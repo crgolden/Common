@@ -7,7 +7,7 @@
     public interface IAddressService
     {
         Task<IEnumerable<Address>> ValidateAsync(
-            Address address,
+            Address? address,
             CancellationToken cancellationToken = default);
     }
 }

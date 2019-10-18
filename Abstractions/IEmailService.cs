@@ -7,10 +7,10 @@
     public interface IEmailService
     {
         Task SendEmailAsync(
-            string source,
-            IEnumerable<string> destinations,
-            string subject,
-            string htmlBody,
+            string? source,
+            IEnumerable<string>? destinations,
+            string? subject,
+            string? htmlBody,
             string? textBody = default,
             CancellationToken cancellationToken = default);
     }

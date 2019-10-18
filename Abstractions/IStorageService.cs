@@ -8,23 +8,23 @@
     public interface IStorageService
     {
         Task<Uri> Upload(
-            Stream stream,
-            string fileName,
-            string folderName,
+            Stream? stream,
+            string? fileName,
+            string? folderName,
             CancellationToken cancellationToken = default);
 
         Task Delete(
-            string fileName,
-            string folderName,
+            string? fileName,
+            string? folderName,
             CancellationToken cancellationToken = default);
 
         Task DeleteAll(
-            string folderName,
+            string? folderName,
             CancellationToken cancellationToken = default);
 
         Uri GetUrl(
-            string fileName,
-            string folderName,
-            DateTime expiration);
+            string? fileName,
+            string? folderName,
+            DateTime? expiration);
     }
 }

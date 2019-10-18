@@ -9,23 +9,23 @@
     public interface IDataService
     {
         Task<T> CreateAsync<T>(
-            T record,
+            T? record,
             CancellationToken cancellationToken = default)
             where T : class;
 
-        Task<T> ReadAsync<T>(
-            Expression<Func<T, bool>> expression,
+        Task<T?> ReadAsync<T>(
+            Expression<Func<T, bool>>? expression,
             CancellationToken cancellationToken = default)
             where T : class;
 
         Task UpdateAsync<T>(
-            Expression<Func<T, bool>> expression,
-            T record,
+            Expression<Func<T, bool>>? expression,
+            T? record,
             CancellationToken cancellationToken = default)
             where T : class;
 
         Task DeleteAsync<T>(
-            Expression<Func<T, bool>> expression,
+            Expression<Func<T, bool>>? expression,
             CancellationToken cancellationToken = default)
             where T : class;
 
