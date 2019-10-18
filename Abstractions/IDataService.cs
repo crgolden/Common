@@ -8,6 +8,10 @@
 
     public interface IDataService
     {
+        DataServiceType Type { get; }
+
+        string? Name { get; set; }
+
         Task<T> CreateAsync<T>(
             T? record,
             CancellationToken cancellationToken = default)

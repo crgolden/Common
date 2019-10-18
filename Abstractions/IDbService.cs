@@ -4,7 +4,9 @@
 
     public interface IDbService
     {
-        DbProviderType Provider { get; }
+        DbServiceType Type { get; }
+
+        string? Name { get; set; }
 
         bool CanCreateDataSourceEnumerator { get; }
 

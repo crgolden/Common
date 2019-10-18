@@ -1,6 +1,6 @@
 ﻿namespace Common
 {
-    public enum DbProviderType
+    public enum DbServiceType
     {
         Entity,
         Odbc,
