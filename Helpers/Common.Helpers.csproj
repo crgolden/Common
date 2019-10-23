@@ -5,8 +5,8 @@
     <RootNamespace>Common</RootNamespace>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
-    <PackageId>Common.Enums</PackageId>
-    <Version>1.0.0-beta5</Version>
+    <PackageId>Common.Helpers</PackageId>
+    <Version>1.0.0-beta1</Version>
     <Company>crgolden</Company>
     <Authors>Chris Golden</Authors>
     <RepositoryUrl>https://github.com/crgolden/Common</RepositoryUrl>

@@ -3,6 +3,8 @@
     using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
+    using Microsoft.Extensions.Logging;
+    using static Microsoft.Extensions.Logging.LogLevel;
 
     public interface IEmailService
     {
@@ -12,6 +14,7 @@
             string? subject,
             string? htmlBody,
             string? textBody = default,
+            LogLevel logLevel = Information,
             CancellationToken cancellationToken = default);
     }
 }
