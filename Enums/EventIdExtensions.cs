@@ -3,7 +3,7 @@
     using System;
     using System.Linq.Expressions;
     using Microsoft.Extensions.Logging;
-    using static Moq.It;
+    using Moq;
 
     public static class EventIdExtensions
     {
@@ -14,10 +14,10 @@
         {
             return logger => logger.Log(
                 logLevel,
-                Is<Microsoft.Extensions.Logging.EventId>(y => y.Id == (int)eventId && y.Name == $"{eventId}"),
-                IsAny<IsAnyType>(),
+                It.Is<Microsoft.Extensions.Logging.EventId>(x => x.Id == (int)eventId && x.Name == $"{eventId}"),
+                It.IsAny<It.IsAnyType>(),
                 exception,
-                (Func<IsAnyType, Exception, string>)IsAny<object>());
+                (Func<It.IsAnyType, Exception, string>)It.IsAny<object>());
         }
     }
 }

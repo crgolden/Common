@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Claims", "Claims\Com
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Enums", "Enums\Common.Enums.csproj", "{63510D28-325A-4F93-8422-4817E6B81073}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Helpers", "Helpers\Common.Helpers.csproj", "{2DA758E3-F28A-4720-8096-4F2A5FAC082F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Helpers", "Helpers\Common.Helpers.csproj", "{2DA758E3-F28A-4720-8096-4F2A5FAC082F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Helpers.Tests", "Helpers.Tests\Common.Helpers.Tests.csproj", "{3222F96C-A387-4B09-A919-7F5529F82D63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{2DA758E3-F28A-4720-8096-4F2A5FAC082F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DA758E3-F28A-4720-8096-4F2A5FAC082F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DA758E3-F28A-4720-8096-4F2A5FAC082F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3222F96C-A387-4B09-A919-7F5529F82D63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3222F96C-A387-4B09-A919-7F5529F82D63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3222F96C-A387-4B09-A919-7F5529F82D63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3222F96C-A387-4B09-A919-7F5529F82D63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

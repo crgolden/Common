@@ -10,16 +10,21 @@
     {
         private readonly Func<HttpRequestMessage, HttpResponseMessage> _handler;
 
-        public TestMessageHandler(Func<HttpRequestMessage, HttpResponseMessage> handler)
+        public TestMessageHandler(Func<HttpRequestMessage, HttpResponseMessage>? handler)
         {
-            _handler = handler;
+            _handler = handler ?? throw new ArgumentNullException(nameof(handler));
         }
 
         /// <inheritdoc />
         protected override Task<HttpResponseMessage> SendAsync(
-            HttpRequestMessage request,
+            HttpRequestMessage? request,
             CancellationToken cancellationToken)
         {
+            if (request == default)
+            {
+                throw new ArgumentNullException(nameof(request));
+            }
+
             return FromResult(_handler(request));
         }
     }
