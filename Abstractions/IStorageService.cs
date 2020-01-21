@@ -4,33 +4,27 @@
     using System.IO;
     using System.Threading;
     using System.Threading.Tasks;
-    using Microsoft.Extensions.Logging;
-    using static Microsoft.Extensions.Logging.LogLevel;
 
     public interface IStorageService
     {
         Task<Uri> Upload(
-            Stream? stream,
-            string? fileName,
-            string? folderName,
-            LogLevel logLevel = Information,
+            Stream stream,
+            string fileName,
+            string folderName,
             CancellationToken cancellationToken = default);
 
         Task Delete(
-            string? fileName,
-            string? folderName,
-            LogLevel logLevel = Information,
+            string fileName,
+            string folderName,
             CancellationToken cancellationToken = default);
 
         Task DeleteAll(
-            string? folderName,
-            LogLevel logLevel = Information,
+            string folderName,
             CancellationToken cancellationToken = default);
 
         Uri GetUrl(
-            string? fileName,
-            string? folderName,
-            DateTime? expiration,
-            LogLevel logLevel = Trace);
+            string fileName,
+            string folderName,
+            DateTime expiration);
     }
 }

@@ -2,42 +2,35 @@
 {
     using System.Threading;
     using System.Threading.Tasks;
-    using Microsoft.Extensions.Logging;
-    using static Microsoft.Extensions.Logging.LogLevel;
 
     public interface IPaymentService
     {
-        Task<string?> GetCustomerAsync(
-            string? customerId,
-            LogLevel logLevel = Information,
+        Task<string> GetCustomerAsync(
+            string customerId,
             CancellationToken cancellationToken = default);
 
-        Task<string?> CreateCustomerAsync(
-            string? email,
-            string? tokenId,
-            LogLevel logLevel = Information,
+        Task<string> CreateCustomerAsync(
+            string email,
+            string tokenId,
             CancellationToken cancellationToken = default);
 
-        Task<string?> AuthorizeAsync(
-            string? customerId,
-            decimal? amount,
-            string? currency,
-            string? description = default,
-            LogLevel logLevel = Information,
+        Task<string> AuthorizeAsync(
+            string customerId,
+            decimal amount,
+            string currency,
+            string description = default,
             CancellationToken cancellationToken = default);
 
-        Task<string?> CaptureAsync(
-            string? customerId,
-            decimal? amount,
-            string? currency,
-            string? description = default,
-            LogLevel logLevel = Information,
+        Task<string> CaptureAsync(
+            string customerId,
+            decimal amount,
+            string currency,
+            string description = default,
             CancellationToken cancellationToken = default);
 
         Task UpdateAsync(
-            string? chargeId,
-            string? description,
-            LogLevel logLevel = Information,
+            string chargeId,
+            string description,
             CancellationToken cancellationToken = default);
     }
 }

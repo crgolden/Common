@@ -5,10 +5,6 @@
     /// <summary>Represents a set of methods for creating instances of a provider's implementation of the data source classes.</summary>
     public interface IDbService
     {
-        DbServiceType Type { get; }
-
-        string? Name { get; set; }
-
         /// <summary>Gets a value indicating whether specifies whether the specific <see cref="IDbService" /> supports the <see cref="DbDataSourceEnumerator" /> class.</summary>
         /// <returns>
         /// <see langword="true" /> if the instance of the <see cref="IDbService" /> supports the <see cref="DbDataSourceEnumerator" /> class; otherwise <see langword="false" />.</returns>
