@@ -10,7 +10,7 @@
 
     /// <summary>A service that reads data.</summary>
     [PublicAPI]
-    public interface IDataQueryService : INameableService
+    public interface IDataQueryService : INameable
     {
         /// <summary>Determines whether any element of a sequence satisfies a condition.</summary>
         /// <param name="source">A sequence whose elements to test for a condition.</param>
@@ -199,17 +199,6 @@
         /// <paramref name="source" /> or <paramref name="action" /> is <see langword="null" />.</exception>
         /// <exception cref="InvalidOperationException">An element in the collection has been modified.</exception>
         Task ForEachAsync<T>(IQueryable<T> source, Action<T> action, CancellationToken cancellationToken = default);
-
-        /// <summary>Finds a single element by its key value(s).</summary>
-        /// <param name="source">An <see cref="IQueryable{T}" /> that contains the elements to be queried.</param>
-        /// <param name="keyValues">The key values of the element to be returned.</param>
-        /// <param name="cancellationToken">The cancellation token.</param>
-        /// <typeparam name="T">The type of the elements of <paramref name="source" />.</typeparam>
-        /// <returns>The element with the specified <paramref name="keyValues"/>.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="source" /> is <see langword="null" /> or <paramref name="keyValues"/> is <see langword="null" />.</exception>
-        /// <exception cref="ArgumentException"><paramref name="keyValues"/> is empty.</exception>
-        ValueTask<T> GetAsync<T>(IQueryable<T> source, object[] keyValues, CancellationToken cancellationToken = default)
-            where T : class;
 
         /// <summary>Returns an <see cref="long" /> that represents the total number of elements in a sequence.</summary>
         /// <param name="source">An <see cref="IQueryable{T}" /> that contains the elements to be counted.</param>

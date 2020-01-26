@@ -9,7 +9,7 @@
 
     /// <summary>A service that updates data.</summary>
     [PublicAPI]
-    public interface IDataCommandService : INameableService
+    public interface IDataCommandService : INameable
     {
         /// <summary>Creates a record.</summary>
         /// <typeparam name="T">The type of <paramref name="record"/>.</typeparam>
@@ -41,6 +41,16 @@
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A <see cref="Task"/>.</returns>
         Task DeleteRangeAsync<T>(IDictionary<Expression<Func<T, bool>>, T> keyValuePairs, CancellationToken cancellationToken = default)
+            where T : class;
+
+        /// <summary>Finds a single element by its key value(s).</summary>
+        /// <param name="keyValues">The key values of the element to be returned.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <typeparam name="T">The type of the element with key values <paramref name="keyValues"/>/>.</typeparam>
+        /// <returns>The element with the specified <paramref name="keyValues"/>.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="keyValues"/> is <see langword="null" />.</exception>
+        /// <exception cref="ArgumentException"><paramref name="keyValues"/> is empty.</exception>
+        ValueTask<T> GetAsync<T>(object[] keyValues, CancellationToken cancellationToken = default)
             where T : class;
 
         /// <summary>Persists changes to the store.</summary>

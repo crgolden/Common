@@ -23,7 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Enums", "Enums\Commo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Helpers", "Helpers\Common.Helpers.csproj", "{2DA758E3-F28A-4720-8096-4F2A5FAC082F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Helpers.Tests", "Helpers.Tests\Common.Helpers.Tests.csproj", "{3222F96C-A387-4B09-A919-7F5529F82D63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Helpers.Tests", "Helpers.Tests\Common.Helpers.Tests.csproj", "{3222F96C-A387-4B09-A919-7F5529F82D63}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.EventIds", "EventIds\Common.EventIds.csproj", "{70730430-7CFF-47A6-84E1-67BC647D82E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Attributes", "Attributes\Common.Attributes.csproj", "{E99674B3-5C8D-4865-B2F7-B8262055CAC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{3222F96C-A387-4B09-A919-7F5529F82D63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3222F96C-A387-4B09-A919-7F5529F82D63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3222F96C-A387-4B09-A919-7F5529F82D63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70730430-7CFF-47A6-84E1-67BC647D82E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70730430-7CFF-47A6-84E1-67BC647D82E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70730430-7CFF-47A6-84E1-67BC647D82E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70730430-7CFF-47A6-84E1-67BC647D82E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E99674B3-5C8D-4865-B2F7-B8262055CAC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E99674B3-5C8D-4865-B2F7-B8262055CAC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E99674B3-5C8D-4865-B2F7-B8262055CAC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E99674B3-5C8D-4865-B2F7-B8262055CAC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
