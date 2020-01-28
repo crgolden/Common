@@ -1,31 +1,33 @@
 ﻿namespace Common
 {
     using System.Data.Common;
+    using JetBrains.Annotations;
 
     /// <summary>Represents a set of methods for creating instances of a provider's implementation of the data source classes.</summary>
+    [PublicAPI]
     public interface IDbService
     {
-        /// <summary>Gets a value indicating whether specifies whether the specific <see cref="IDbService" /> supports the <see cref="DbDataSourceEnumerator" /> class.</summary>
+        /// <summary>Gets a value indicating whether the specific <see cref="IDbService" /> supports the <see cref="DbDataSourceEnumerator" /> class.</summary>
         /// <returns>
         /// <see langword="true" /> if the instance of the <see cref="IDbService" /> supports the <see cref="DbDataSourceEnumerator" /> class; otherwise <see langword="false" />.</returns>
         /// <value>
-        /// A value indicating whether specifies whether the specific <see cref="IDbService" /> supports the <see cref="DbDataSourceEnumerator" /> class.
+        /// A value indicating whether the specific <see cref="IDbService" /> supports the <see cref="DbDataSourceEnumerator" /> class.
         /// </value>
         bool CanCreateDataSourceEnumerator { get; }
 
-        /// <summary>Gets a value indicating whether specifies whether the specific <see cref="IDbService" /> supports the <see cref="DbDataAdapter" /> class.</summary>
+        /// <summary>Gets a value indicating whether the specific <see cref="IDbService" /> supports the <see cref="DbDataAdapter" /> class.</summary>
         /// <returns>
         /// <see langword="true" /> if the instance of the <see cref="IDbService" /> supports the <see cref="DbDataAdapter" /> class; otherwise <see langword="false" />.</returns>
         /// <value>
-        /// A value indicating whether specifies whether the specific <see cref="IDbService" /> supports the <see cref="DbDataAdapter" /> class.
+        /// A value indicating whether the specific <see cref="IDbService" /> supports the <see cref="DbDataAdapter" /> class.
         /// </value>
         bool CanCreateDataAdapter { get; }
 
-        /// <summary>Gets a value indicating whether specifies whether the specific <see cref="IDbService" /> supports the <see cref="DbCommandBuilder" /> class.</summary>
+        /// <summary>Gets a value indicating whether the specific <see cref="IDbService" /> supports the <see cref="DbCommandBuilder" /> class.</summary>
         /// <returns>
         /// <see langword="true" /> if the instance of the <see cref="IDbService" /> supports the <see cref="DbCommandBuilder" /> class; otherwise <see langword="false" />.</returns>
         /// <value>
-        /// A value indicating whether specifies whether the specific <see cref="IDbService" /> supports the <see cref="DbCommandBuilder" /> class.
+        /// A value indicating whether the specific <see cref="IDbService" /> supports the <see cref="DbCommandBuilder" /> class.
         /// </value>
         bool CanCreateCommandBuilder { get; }
 
