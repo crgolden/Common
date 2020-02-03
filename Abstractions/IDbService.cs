@@ -5,7 +5,7 @@
 
     /// <summary>Represents a set of methods for creating instances of a provider's implementation of the data source classes.</summary>
     [PublicAPI]
-    public interface IDbService
+    public interface IDbService : INameable
     {
         /// <summary>Gets a value indicating whether the specific <see cref="IDbService" /> supports the <see cref="DbDataSourceEnumerator" /> class.</summary>
         /// <returns>

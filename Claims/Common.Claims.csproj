@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Common</RootNamespace>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>7.3</LangVersion>
     <PackageId>Common.Claims</PackageId>
     <Version>1.0.0-beta3</Version>
     <Company>crgolden</Company>
@@ -19,8 +19,15 @@
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <PackageIcon>deeprog.png</PackageIcon>
     <RepositoryType>git</RepositoryType>
-    <CodeAnalysisRuleSet>..\.ruleset</CodeAnalysisRuleSet>
     <SkipDefaultEditorConfigAsAdditionalFile>true</SkipDefaultEditorConfigAsAdditionalFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <CodeAnalysisRuleSet />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CodeAnalysisRuleSet />
   </PropertyGroup>
 
   <ItemGroup>
@@ -43,7 +50,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="SonarAnalyzer.CSharp" Version="8.2.0.14119">
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="8.3.0.14607">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

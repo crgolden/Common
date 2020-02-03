@@ -2,10 +2,10 @@
 {
     using System;
     using System.Net.Http;
-    using System.Threading;
     using System.Threading.Tasks;
     using Xunit;
     using static System.Net.HttpStatusCode;
+    using static System.Threading.CancellationToken;
 
     public class TestMessageHandlerTests
     {
@@ -13,7 +13,7 @@
         public void ThrowsForNullHandler()
         {
             // Arrange
-            static object TestCode() => new DerivedMessageHandler(default);
+            DerivedMessageHandler TestCode() => new DerivedMessageHandler(default);
 
             // Act
             var exception = Assert.Throws<ArgumentNullException>(TestCode);
@@ -26,16 +26,16 @@
         public async Task SendAsyncThrowsForNullRequest()
         {
             // Arrange
-            ArgumentNullException exception;
+            Task TestCode()
+            {
+                using (var handler = new DerivedMessageHandler(_ => new HttpResponseMessage(OK)))
+                {
+                    return handler.SendAsyncForTest(default);
+                }
+            }
 
             // Act
-            using (var responseMessage = new HttpResponseMessage())
-            {
-                HttpResponseMessage Handler(HttpRequestMessage requestMessage) => responseMessage;
-                using var messageHandler = new DerivedMessageHandler(Handler);
-                Task TestCode() => messageHandler.SendAsyncForTest(default);
-                exception = await Assert.ThrowsAsync<ArgumentNullException>(TestCode).ConfigureAwait(false);
-            }
+            var exception = await Assert.ThrowsAsync<ArgumentNullException>(TestCode).ConfigureAwait(true);
 
             // Assert
             Assert.Equal("request", exception.ParamName);
@@ -48,13 +48,11 @@
             HttpResponseMessage response;
 
             // Act
-            using (var responseMessage = new HttpResponseMessage(OK))
+            using (var handler = new DerivedMessageHandler(_ => new HttpResponseMessage(OK)))
             {
-                HttpResponseMessage Handler(HttpRequestMessage requestMessage) => responseMessage;
-                using var messageHandler = new DerivedMessageHandler(Handler);
-                using (var requestMessage = new HttpRequestMessage())
+                using (var request = new HttpRequestMessage())
                 {
-                    response = await messageHandler.SendAsyncForTest(requestMessage).ConfigureAwait(false);
+                    response = await handler.SendAsyncForTest(request).ConfigureAwait(true);
                 }
             }
 
@@ -64,15 +62,12 @@
 
         private class DerivedMessageHandler : TestMessageHandler
         {
-            public DerivedMessageHandler(Func<HttpRequestMessage, HttpResponseMessage>? handler)
+            public DerivedMessageHandler(Func<HttpRequestMessage, HttpResponseMessage> handler)
                 : base(handler)
             {
             }
 
-            public Task<HttpResponseMessage> SendAsyncForTest(HttpRequestMessage? request)
-            {
-                return SendAsync(request, CancellationToken.None);
-            }
+            public Task<HttpResponseMessage> SendAsyncForTest(HttpRequestMessage request) => SendAsync(request, None);
         }
     }
 }

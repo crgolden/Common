@@ -1,10 +1,13 @@
 ﻿namespace Common
 {
-    /// <summary>An implementation that can be identified by name.</summary>
+    using JetBrains.Annotations;
+
+    /// <summary>An instance that can be named.</summary>
+    [PublicAPI]
     public interface INameable
     {
-        /// <summary>Gets the name of the implementation.</summary>
-        /// <value>The name of the implementation.</value>
+        /// <summary>Gets the name of this instance.</summary>
+        /// <value>The name.</value>
         string Name { get; }
     }
 }

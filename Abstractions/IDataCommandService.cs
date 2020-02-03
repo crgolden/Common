@@ -16,6 +16,7 @@
         /// <param name="record">The record to create.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A <see cref="Task{T}"/>.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="record"/> is <see langword="null" />.</exception>
         Task<T> CreateAsync<T>(T record, CancellationToken cancellationToken = default)
             where T : class;
 
@@ -24,6 +25,7 @@
         /// <param name="records">The record to create.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A <see cref="Task{IEnumerable}"/>.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="records"/> is <see langword="null" />.</exception>
         Task<IEnumerable<T>> CreateRangeAsync<T>(IEnumerable<T> records, CancellationToken cancellationToken = default)
             where T : class;
 
@@ -32,25 +34,17 @@
         /// <param name="predicate">The predicate.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A <see cref="Task"/>.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="predicate"/> is <see langword="null" />.</exception>
         Task DeleteAsync<T>(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default)
             where T : class;
 
         /// <summary>Deletes a sequence of records.</summary>
         /// <typeparam name="T">The type of the records.</typeparam>
-        /// <param name="keyValuePairs">The predicate.</param>
+        /// <param name="expressions">The expressions.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A <see cref="Task"/>.</returns>
-        Task DeleteRangeAsync<T>(IDictionary<Expression<Func<T, bool>>, T> keyValuePairs, CancellationToken cancellationToken = default)
-            where T : class;
-
-        /// <summary>Finds a single element by its key value(s).</summary>
-        /// <param name="keyValues">The key values of the element to be returned.</param>
-        /// <param name="cancellationToken">The cancellation token.</param>
-        /// <typeparam name="T">The type of the element with key values <paramref name="keyValues"/>/>.</typeparam>
-        /// <returns>The element with the specified <paramref name="keyValues"/>.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="keyValues"/> is <see langword="null" />.</exception>
-        /// <exception cref="ArgumentException"><paramref name="keyValues"/> is empty.</exception>
-        ValueTask<T> GetAsync<T>(object[] keyValues, CancellationToken cancellationToken = default)
+        /// <exception cref="ArgumentNullException"><paramref name="expressions"/> is <see langword="null" />.</exception>
+        Task DeleteRangeAsync<T>(IEnumerable<Expression<Func<T, bool>>> expressions, CancellationToken cancellationToken = default)
             where T : class;
 
         /// <summary>Persists changes to the store.</summary>
@@ -64,6 +58,9 @@
         /// <param name="record">The record to update.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A <see cref="Task"/>.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="predicate"/> is <see langword="null" />
+        /// or
+        /// <paramref name="record"/> is <see langword="null" />.</exception>
         Task UpdateAsync<T>(Expression<Func<T, bool>> predicate, T record, CancellationToken cancellationToken = default)
             where T : class;
 
@@ -73,6 +70,7 @@
         /// <param name="keyValuePairs">The predicate/records pairs.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A <see cref="Task"/>.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="keyValuePairs"/> is <see langword="null" />.</exception>
         Task UpdateRangeAsync<T>(IDictionary<Expression<Func<T, bool>>, T> keyValuePairs, CancellationToken cancellationToken = default)
             where T : class;
     }
