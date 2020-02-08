@@ -7,8 +7,8 @@
     [PublicAPI]
     public interface IScopeable
     {
-        /// <summary>Scopes this instance.</summary>
-        /// <returns>The scope.</returns>
-        IDisposable Scope();
+        /// <summary>Gets the scope.</summary>
+        /// <value>The scope.</value>
+        IDisposable Scope { get; }
     }
 }
