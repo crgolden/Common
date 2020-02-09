@@ -5,7 +5,6 @@
     using static System.Activator;
 
     /// <summary>An attribute to ensure a value type doesn't have the default value.</summary>
-    // https://andrewlock.net/creating-an-empty-guid-validation-attribute/
     [PublicAPI]
     public class NotDefaultAttribute : ValidationAttribute
     {

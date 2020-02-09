@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Common</RootNamespace>
     <LangVersion>7.3</LangVersion>
-    <PackageId>Common.Components</PackageId>
+    <PackageId>Common.Attributes</PackageId>
     <Version>1.0.0-beta1</Version>
     <Company>crgolden</Company>
     <Authors>Chris Golden</Authors>
