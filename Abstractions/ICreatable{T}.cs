@@ -7,6 +7,7 @@
     /// <typeparam name="T">The type of the identifier.</typeparam>
     [PublicAPI]
     public interface ICreatable<T>
+        where T : IComparable<T>, IEquatable<T>
     {
         /// <summary>Gets or sets the created by.</summary>
         /// <value>The created by.</value>
