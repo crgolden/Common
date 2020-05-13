@@ -7,7 +7,7 @@
     using System.Threading.Tasks;
     using JetBrains.Annotations;
 
-    /// <summary>A service that updates data.</summary>
+    /// <summary>A service that writes data.</summary>
     [PublicAPI]
     public interface IDataCommandService : INameable
     {
@@ -40,11 +40,11 @@
 
         /// <summary>Deletes a sequence of records.</summary>
         /// <typeparam name="T">The type of the records.</typeparam>
-        /// <param name="expressions">The expressions.</param>
+        /// <param name="predicates">The expressions.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A <see cref="Task"/>.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="expressions"/> is <see langword="null" />.</exception>
-        Task DeleteRangeAsync<T>(IEnumerable<Expression<Func<T, bool>>> expressions, CancellationToken cancellationToken = default)
+        /// <exception cref="ArgumentNullException"><paramref name="predicates"/> is <see langword="null" />.</exception>
+        Task DeleteRangeAsync<T>(IEnumerable<Expression<Func<T, bool>>> predicates, CancellationToken cancellationToken = default)
             where T : class;
 
         /// <summary>Persists changes to the store.</summary>
