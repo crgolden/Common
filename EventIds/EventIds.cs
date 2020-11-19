@@ -5,21 +5,21 @@
     /// <summary>Common event ids for logging.</summary>
     public static class EventIds
     {
-        /// <summary>Gets the id for the starting get request event.</summary>
-        /// <value>The id for the starting get request event.</value>
-        public static EventId GetStart => new EventId(1000, nameof(GetStart));
+        /// <summary>Gets the id for the starting read request event.</summary>
+        /// <value>The id for the starting read request event.</value>
+        public static EventId ReadStart => new EventId(1000, nameof(ReadStart));
 
-        /// <summary>Gets the id for the ending get request event.</summary>
-        /// <value>The id for the ending get request event.</value>
-        public static EventId GetEnd => new EventId(1001, nameof(GetEnd));
+        /// <summary>Gets the id for the ending read request event.</summary>
+        /// <value>The id for the ending read request event.</value>
+        public static EventId ReadEnd => new EventId(1001, nameof(ReadEnd));
 
-        /// <summary>Gets the id for the ending ranged get request event.</summary>
-        /// <value>The id for the ending ranged get request event.</value>
-        public static EventId GetRangeStart => new EventId(1002, nameof(GetRangeStart));
+        /// <summary>Gets the id for the ending ranged read request event.</summary>
+        /// <value>The id for the ending ranged read request event.</value>
+        public static EventId ReadRangeStart => new EventId(1002, nameof(ReadRangeStart));
 
-        /// <summary>Gets the id for the ending ranged get request event.</summary>
-        /// <value>The id for the ending ranged get request event.</value>
-        public static EventId GetRangeEnd => new EventId(1003, nameof(GetRangeEnd));
+        /// <summary>Gets the id for the ending ranged read request event.</summary>
+        /// <value>The id for the ending ranged read request event.</value>
+        public static EventId ReadRangeEnd => new EventId(1003, nameof(ReadRangeEnd));
 
         /// <summary>Gets the id for the starting create request event.</summary>
         /// <value>The id for the starting create request event.</value>

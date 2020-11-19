@@ -28,7 +28,7 @@
             // Arrange
             Task TestCode()
             {
-                using (var handler = new DerivedMessageHandler(_ => new HttpResponseMessage(OK)))
+                using (var handler = new DerivedMessageHandler(request => new HttpResponseMessage(OK)))
                 {
                     return handler.SendAsyncForTest(default);
                 }
@@ -48,7 +48,7 @@
             HttpResponseMessage response;
 
             // Act
-            using (var handler = new DerivedMessageHandler(_ => new HttpResponseMessage(OK)))
+            using (var handler = new DerivedMessageHandler(request => new HttpResponseMessage(OK)))
             {
                 using (var request = new HttpRequestMessage())
                 {
