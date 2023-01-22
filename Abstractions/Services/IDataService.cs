@@ -1,4 +1,4 @@
-﻿namespace Common
+﻿namespace Common.Services
 {
     using JetBrains.Annotations;
 

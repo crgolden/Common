@@ -1,6 +1,7 @@
-﻿namespace Common
+﻿namespace Common.Services
 {
     using System.Data.Common;
+    using Abilities;
     using JetBrains.Annotations;
 
     /// <summary>Represents a set of methods for creating instances of a provider's implementation of the data source classes.</summary>

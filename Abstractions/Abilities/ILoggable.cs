@@ -1,4 +1,4 @@
-﻿namespace Common
+﻿namespace Common.Abilities
 {
     using System.Threading.Tasks;
     using JetBrains.Annotations;

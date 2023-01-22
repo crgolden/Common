@@ -1,12 +1,15 @@
-﻿namespace Common
+﻿namespace Common.Services
 {
     using System;
     using System.IO;
     using System.Threading;
     using System.Threading.Tasks;
+    using Abilities;
+    using JetBrains.Annotations;
 
     /// <summary>A service that manages file storage.</summary>
-    public interface IStorageService
+    [PublicAPI]
+    public interface IStorageService : INameable
     {
         /// <summary>Uploads the specified stream.</summary>
         /// <param name="stream">The stream.</param>
@@ -58,6 +61,6 @@
         Uri GetUrl(
             string fileName,
             string folderName,
-            DateTime expiration);
+            DateTimeOffset expiration);
     }
 }

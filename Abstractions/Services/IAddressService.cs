@@ -1,14 +1,15 @@
-﻿namespace Common
+﻿namespace Common.Services
 {
     using System;
     using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
+    using Abilities;
     using JetBrains.Annotations;
 
     /// <summary>A service that validates an <see cref="Address"/>.</summary>
     [PublicAPI]
-    public interface IAddressService
+    public interface IAddressService : INameable
     {
         /// <summary>Validates an <see cref="Address"/>.</summary>
         /// <param name="address">The address.</param>

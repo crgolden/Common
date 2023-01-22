@@ -1,4 +1,4 @@
-﻿namespace Common
+﻿namespace Common.Abilities
 {
     using System;
     using JetBrains.Annotations;

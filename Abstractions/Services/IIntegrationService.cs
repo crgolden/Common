@@ -1,14 +1,15 @@
-﻿namespace Common
+﻿namespace Common.Services
 {
     using System;
     using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
+    using Abilities;
     using JetBrains.Annotations;
 
     /// <summary>A service that integrates with another system.</summary>
     [PublicAPI]
-    public interface IIntegrationService
+    public interface IIntegrationService : INameable
     {
         /// <summary>Creates a <typeparamref name="TModel"/>.</summary>
         /// <typeparam name="TModel">The type of the model.</typeparam>

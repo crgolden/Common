@@ -1,4 +1,4 @@
-﻿namespace Common
+﻿namespace Common.Abilities
 {
     using System;
     using JetBrains.Annotations;
@@ -14,6 +14,6 @@
 
         /// <summary>Gets or sets the created date.</summary>
         /// <value>The created date.</value>
-        DateTime CreatedDate { get; set; }
+        DateTimeOffset CreatedDate { get; set; }
     }
 }

@@ -1,14 +1,15 @@
-﻿namespace Common
+﻿namespace Common.Services
 {
     using System;
     using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
+    using Abilities;
     using JetBrains.Annotations;
 
     /// <summary>A service that sends emails.</summary>
     [PublicAPI]
-    public interface IEmailService
+    public interface IEmailService : INameable
     {
         /// <summary>Sends an email.</summary>
         /// <param name="source">The source.</param>

@@ -1,4 +1,4 @@
-﻿namespace Common
+﻿namespace Common.Services
 {
     using System;
     using System.Collections.Generic;
@@ -6,6 +6,7 @@
     using System.Linq.Expressions;
     using System.Threading;
     using System.Threading.Tasks;
+    using Abilities;
     using JetBrains.Annotations;
 
     /// <summary>A service that reads data.</summary>

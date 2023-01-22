@@ -6,11 +6,11 @@ namespace Common.Attributes.Tests
 
     public class NotDefaultAttributeTests
     {
-        public static TheoryData<Tuple<object, bool>> IsValidData => new TheoryData<Tuple<object, bool>>
+        public static TheoryData<Tuple<object, bool>> IsValidData => new ()
         {
             Create(default(object), true),
             Create(new object(), true),
-            Create<object, bool>(default(DateTime), false),
+            Create<object, bool>(default(DateTimeOffset), false),
             Create<object, bool>(default(Guid), false)
         };
 

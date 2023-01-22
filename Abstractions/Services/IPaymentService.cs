@@ -1,13 +1,14 @@
-﻿namespace Common
+﻿namespace Common.Services
 {
     using System;
     using System.Threading;
     using System.Threading.Tasks;
+    using Abilities;
     using JetBrains.Annotations;
 
     /// <summary>A service that processes payments.</summary>
     [PublicAPI]
-    public interface IPaymentService
+    public interface IPaymentService : INameable
     {
         /// <summary>Gets a customer by identifier.</summary>
         /// <param name="customerId">The customer identifier.</param>

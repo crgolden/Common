@@ -3,8 +3,7 @@
     using System.Text.Json.Serialization;
     using JetBrains.Annotations;
 
-    /// <summary>This is a convenience class to strongly type the Address Claim.</summary>
-    // https://openid.net/specs/openid-connect-core-1_0.html#AddressClaim
+    /// <summary>This is a convenience class to strongly type the <a href="https://openid.net/specs/openid-connect-core-1_0.html#AddressClaim">Address Claim</a>.</summary>
     [PublicAPI]
     public class Address
     {
@@ -16,7 +15,12 @@
         /// or as a single line feed character("\n").
         /// </value>
         [JsonPropertyName("formatted")]
-        public string Formatted => $"{StreetAddress}\r\n{Locality}\r\n{$"{Region} {PostalCode}".Trim()}\r\n{Country}".Trim();
+        public string Formatted => @$"
+                                      {StreetAddress.Trim()}
+                                      {Locality.Trim()}
+                                      {$"{Region.Trim()} {PostalCode.Trim()}"}
+                                      {Country.Trim()}
+                                     ".Trim();
 
         /// <summary>Gets or sets the full street address.</summary>
         /// <value>

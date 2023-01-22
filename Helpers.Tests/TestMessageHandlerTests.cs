@@ -13,10 +13,10 @@
         public void ThrowsForNullHandler()
         {
             // Arrange
-            DerivedMessageHandler TestCode() => new DerivedMessageHandler(default);
+            static DerivedMessageHandler DefaultTestCode() => new (default);
 
             // Act
-            var exception = Assert.Throws<ArgumentNullException>(TestCode);
+            var exception = Assert.Throws<ArgumentNullException>(DefaultTestCode);
 
             // Assert
             Assert.Equal("handler", exception.ParamName);
@@ -25,15 +25,6 @@
         [Fact]
         public async Task SendAsyncThrowsForNullRequest()
         {
-            // Arrange
-            Task TestCode()
-            {
-                using (var handler = new DerivedMessageHandler(request => new HttpResponseMessage(OK)))
-                {
-                    return handler.SendAsyncForTest(default);
-                }
-            }
-
             // Act
             var exception = await Assert.ThrowsAsync<ArgumentNullException>(TestCode).ConfigureAwait(true);
 
@@ -48,16 +39,20 @@
             HttpResponseMessage response;
 
             // Act
-            using (var handler = new DerivedMessageHandler(request => new HttpResponseMessage(OK)))
+            using (var handler = new DerivedMessageHandler(_ => new HttpResponseMessage(OK)))
             {
-                using (var request = new HttpRequestMessage())
-                {
-                    response = await handler.SendAsyncForTest(request).ConfigureAwait(true);
-                }
+                using var request = new HttpRequestMessage();
+                response = await handler.SendAsyncForTest(request).ConfigureAwait(true);
             }
 
             // Assert
             Assert.Equal(OK, response.StatusCode);
+        }
+
+        private static Task TestCode()
+        {
+            using var handler = new DerivedMessageHandler(_ => new HttpResponseMessage(OK));
+            return handler.SendAsyncForTest(default);
         }
 
         private class DerivedMessageHandler : TestMessageHandler
@@ -69,5 +64,5 @@
 
             public Task<HttpResponseMessage> SendAsyncForTest(HttpRequestMessage request) => SendAsync(request, None);
         }
-    }
+   }
 }
